@@ -65,6 +65,24 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50.0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:16]];
+        /* Section header is in 0th index... */
+    [label setText:@"Infinity Fibonacci"];
+    [view addSubview:label];
+    [view setBackgroundColor:[UIColor redColor]];
+     return view;
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
